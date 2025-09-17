@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { Institution } from "../types";
 import { X } from "lucide-react";

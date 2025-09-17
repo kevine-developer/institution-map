@@ -1,3 +1,4 @@
+"use client";
 import { ComponentType } from "react";
 
 type MapControlButtonProps = {
