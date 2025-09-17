@@ -54,9 +54,8 @@ const App: React.FC = () => {
 
   const handleSelectItem = (institution: Institution) => {
     setSelectedInstitution(institution);
-    
-  };
 
+  };
   const handleCloseDetail = () => {
     setSelectedInstitution(null);
   };
