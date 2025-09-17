@@ -1,11 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import MapComponent from "./components/MapComponent";
+// ❌ import direct
+// import MapComponent from "./components/MapComponent";
 import { Institution } from "./types";
 import InstitutionDetail from "./components/InstitutionDetail";
 import { getInstitutions, checkApiHealth } from "./services/institutionService";
 import Reload from "./components/ui/Reload";
 import Loading from "./components/ui/Loading";
+import dynamic from "next/dynamic";
+
+// ✅ import dynamique sans SSR
+const MapComponent = dynamic(() => import("./components/MapComponent"), {
+  ssr: false,
+});
 
 const App: React.FC = () => {
   const [institutions, setInstitutions] = useState<Institution[]>([]);
@@ -21,9 +28,7 @@ const App: React.FC = () => {
       const healthy = await checkApiHealth();
       setIsApiHealthy(healthy);
       if (!healthy) {
-        setError(
-          "L'API n'est pas accessible. Vérifiez votre connexion internet."
-        );
+        setError("L'API n'est pas accessible. Vérifiez votre connexion internet.");
       }
     };
     checkHealth();
@@ -39,9 +44,7 @@ const App: React.FC = () => {
         setInstitutions(data);
       } catch (error) {
         console.error("Failed to load institutions:", error);
-        setError(
-          "Erreur lors du chargement des institutions. Veuillez réessayer."
-        );
+        setError("Erreur lors du chargement des institutions. Veuillez réessayer.");
       } finally {
         setIsLoading(false);
       }
@@ -54,8 +57,8 @@ const App: React.FC = () => {
 
   const handleSelectItem = (institution: Institution) => {
     setSelectedInstitution(institution);
-
   };
+
   const handleCloseDetail = () => {
     setSelectedInstitution(null);
   };
@@ -75,18 +78,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <main className="overflow-auto flex flex-grow   relative bg-slate-50 dark:bg-slate-900">
+    <main className="overflow-auto flex flex-grow relative bg-slate-50 dark:bg-slate-900">
       {isLoading && <Loading institutions={institutions} />}
 
       {error && !isLoading && (
-        <Reload
-          error={error}
-          setError={setError}
-          handleRefresh={handleRefresh}
-        />
+        <Reload error={error} setError={setError} handleRefresh={handleRefresh} />
       )}
 
-      <section className="flex-grow flex  overflow-auto">
+      <section className="flex-grow flex overflow-auto">
         <div className="md:col-span-2 lg:col-span-3 h-full z-0 w-full flex-shrink-0">
           <MapComponent
             institutions={institutions}
@@ -98,7 +97,7 @@ const App: React.FC = () => {
 
       {selectedInstitution && (
         <InstitutionDetail
-          institution={selectedInstitution as any}
+          institution={selectedInstitution}
           onClose={handleCloseDetail}
         />
       )}
