@@ -1,0 +1,669 @@
+{
+  "institutions": [
+    {
+      "id": "epp-antananarivo-001",
+      "type": { "category": "education", "subtype": "primary_school" },
+      "name": "École Primaire Publique Analakely",
+      "label": "EPP Analakely",
+      "description": "École primaire située au cœur d'Antananarivo, accueillant 350 élèves du CP1 au CM2.",
+      "coordinates": { "lat": -18.9148, "lng": 47.5215 },
+      "address": {
+        "street": "Rue Ratsimilaho",
+        "commune": "Antananarivo Renivohitra",
+        "district": "Antananarivo",
+        "region": "Analamanga",
+        "postalCode": "101"
+      },
+      "contact": {
+        "phones": ["+261340123456", "+261201234567"],
+        "emails": ["direction@epp-analakely.mg", "secretariat@epp-analakely.mg"],
+        "website": "https://epp-analakely.edu.mg",
+        "socials": { "facebook": "https://facebook.com/epp.analakely" }
+      },
+      "services": [
+        { "id": "srv-001", "name": "Scolarité primaire", "description": "Enseignement du CP1 au CM2" },
+        { "id": "srv-002", "name": "Cantine scolaire", "description": "Repas subventionnés pour les élèves" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/epp-analakely/facade.jpg", "caption": "Façade principale de l'école", "credit": "Service Communication MEN" },
+        { "url": "https://cdn.institutions.mg/epp-analakely/cour.jpg", "caption": "Cour de récréation", "credit": "Direction EPP Analakely" }
+      ],
+      "metadata": {
+        "established": 1965,
+        "capacity": 350,
+        "lastRenovation": 2019,
+        "accreditation": "Ministère de l'Éducation Nationale"
+      }
+    },
+    {
+      "id": "chu-antananarivo-001",
+      "type": { "category": "health", "subtype": "chu" },
+      "name": "Centre Hospitalier Universitaire Joseph Ravoahangy Andrianavalona",
+      "label": "CHU JRA",
+      "description": "Principal centre hospitalier universitaire de Madagascar, offrant des soins spécialisés et la formation médicale.",
+      "coordinates": { "lat": -18.9089, "lng": 47.5322 },
+      "address": {
+        "street": "Avenue de l'Indépendance",
+        "commune": "Antananarivo Renivohitra",
+        "district": "Antananarivo",
+        "region": "Analamanga",
+        "postalCode": "101"
+      },
+      "contact": {
+        "phones": ["+261202345678", "+261341234567"],
+        "emails": ["direction@chu-jra.mg", "urgences@chu-jra.mg"],
+        "website": "https://chu-jra.health.mg",
+        "socials": { "facebook": "https://facebook.com/chu.jra.madagascar" }
+      },
+      "services": [
+        { "id": "srv-003", "name": "Urgences 24h/24", "description": "Service d'urgences médicales et chirurgicales" },
+        { "id": "srv-004", "name": "Chirurgie générale", "description": "Interventions chirurgicales diverses" },
+        { "id": "srv-005", "name": "Maternité", "description": "Suivi de grossesse et accouchements" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/chu-jra/batiment-principal.jpg", "caption": "Bâtiment principal du CHU JRA", "credit": "Service Communication CHU" },
+        { "url": "https://cdn.institutions.mg/chu-jra/urgences.jpg", "caption": "Service des urgences", "credit": "Ministère de la Santé" }
+      ],
+      "metadata": {
+        "established": 1896,
+        "capacity": 800,
+        "lastRenovation": 2021,
+        "accreditation": "Ministère de la Santé Publique"
+      }
+    },
+    {
+      "id": "mairie-antananarivo-001",
+      "type": { "category": "administration", "subtype": "townhall" },
+      "name": "Mairie d'Antananarivo",
+      "label": "CUA",
+      "description": "Commune Urbaine d'Antananarivo, administration municipale de la capitale malgache.",
+      "coordinates": { "lat": -18.9204, "lng": 47.5277 },
+      "address": {
+        "street": "Place de l'Indépendance",
+        "commune": "Antananarivo Renivohitra",
+        "district": "Antananarivo",
+        "region": "Analamanga",
+        "postalCode": "101"
+      },
+      "contact": {
+        "phones": ["+261203456789", "+261342345678"],
+        "emails": ["contact@cua.mg", "etatcivil@cua.mg"],
+        "website": "https://antananarivo.mg",
+        "socials": { "facebook": "https://facebook.com/cua.antananarivo", "twitter": "https://twitter.com/cua_tana" }
+      },
+      "services": [
+        { "id": "srv-006", "name": "État civil", "description": "Actes de naissance, mariage, décès" },
+        { "id": "srv-007", "name": "Urbanisme", "description": "Permis de construire et autorisations" },
+        { "id": "srv-008", "name": "Taxes et impôts locaux", "description": "Collecte des impôts municipaux" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/cua/hotel-ville.jpg", "caption": "Hôtel de ville d'Antananarivo", "credit": "Service Communication CUA" },
+        { "url": "https://cdn.institutions.mg/cua/salle-conseil.jpg", "caption": "Salle du conseil municipal", "credit": "Archives municipales" }
+      ],
+      "metadata": {
+        "established": 1625,
+        "capacity": 2500000,
+        "lastRenovation": 2018,
+        "accreditation": "Ministère de l'Intérieur et de la Décentralisation"
+      }
+    },
+    {
+      "id": "csb2-toamasina-001",
+      "type": { "category": "health", "subtype": "csb2" },
+      "name": "Centre de Santé de Base niveau 2 Toamasina",
+      "label": "CSB2 Toamasina",
+      "description": "Centre de santé de référence offrant des soins primaires à la population de Toamasina.",
+      "coordinates": { "lat": -18.1492, "lng": 49.4023 },
+      "address": {
+        "street": "Boulevard Joffre",
+        "commune": "Toamasina I",
+        "district": "Toamasina",
+        "region": "Atsinanana",
+        "postalCode": "501"
+      },
+      "contact": {
+        "phones": ["+261534567890", "+261203456789"],
+        "emails": ["csb2.toamasina@sante.mg", "medecin.chef@csb2-toamasina.mg"],
+        "website": "https://csb2-toamasina.health.mg"
+      },
+      "services": [
+        { "id": "srv-009", "name": "Consultation médicale", "description": "Consultations générales et spécialisées" },
+        { "id": "srv-010", "name": "Vaccination", "description": "Programme élargi de vaccination" },
+        { "id": "srv-011", "name": "Planification familiale", "description": "Conseils et services contraceptifs" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/csb2-toamasina/batiment.jpg", "caption": "Bâtiment principal du CSB2", "credit": "Direction Régionale de la Santé" },
+        { "url": "https://cdn.institutions.mg/csb2-toamasina/salle-attente.jpg", "caption": "Salle d'attente des patients", "credit": "OMS Madagascar" }
+      ],
+      "metadata": {
+        "established": 1985,
+        "capacity": 150,
+        "lastRenovation": 2020,
+        "accreditation": "Ministère de la Santé Publique"
+      }
+    },
+    {
+      "id": "lycee-fianarantsoa-001",
+      "type": { "category": "education", "subtype": "high_school" },
+      "name": "Lycée Moderne Ambatonakanga Fianarantsoa",
+      "label": "LMA Fianarantsoa",
+      "description": "Établissement d'enseignement secondaire de référence dans la région Haute Matsiatra.",
+      "coordinates": { "lat": -21.4521, "lng": 47.0853 },
+      "address": {
+        "street": "Rue Ambatonakanga",
+        "commune": "Fianarantsoa I",
+        "district": "Fianarantsoa",
+        "region": "Haute Matsiatra",
+        "postalCode": "301"
+      },
+      "contact": {
+        "phones": ["+261754567890", "+261204567890"],
+        "emails": ["direction@lma-fianarantsoa.mg", "vie-scolaire@lma-fianarantsoa.mg"],
+        "website": "https://lma-fianarantsoa.edu.mg",
+        "socials": { "facebook": "https://facebook.com/lma.fianarantsoa" }
+      },
+      "services": [
+        { "id": "srv-012", "name": "Enseignement secondaire général", "description": "Classes de la 6ème à la Terminale" },
+        { "id": "srv-013", "name": "Internat", "description": "Hébergement pour élèves de l'intérieur" },
+        { "id": "srv-014", "name": "Bibliothèque", "description": "Centre de documentation scolaire" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/lma-fianarantsoa/facade.jpg", "caption": "Façade du lycée moderne", "credit": "Direction Régionale de l'Éducation" },
+        { "url": "https://cdn.institutions.mg/lma-fianarantsoa/cour-honneur.jpg", "caption": "Cour d'honneur", "credit": "Association des anciens élèves" }
+      ],
+      "metadata": {
+        "established": 1958,
+        "capacity": 1200,
+        "lastRenovation": 2017,
+        "accreditation": "Ministère de l'Éducation Nationale"
+      }
+    },
+    {
+      "id": "universite-mahajanga-001",
+      "type": { "category": "education", "subtype": "university" },
+      "name": "Université de Mahajanga",
+      "label": "UM",
+      "description": "Institution universitaire publique proposant des formations en sciences, lettres et sciences humaines.",
+      "coordinates": { "lat": -15.7167, "lng": 46.3167 },
+      "address": {
+        "street": "Campus d'Ambondrona",
+        "commune": "Mahajanga I",
+        "district": "Mahajanga",
+        "region": "Boeny",
+        "postalCode": "401"
+      },
+      "contact": {
+        "phones": ["+261626789012", "+261205678901"],
+        "emails": ["rectorat@univ-mahajanga.mg", "scolarite@univ-mahajanga.mg"],
+        "website": "https://univ-mahajanga.edu.mg",
+        "socials": { "facebook": "https://facebook.com/universite.mahajanga", "linkedin": "https://linkedin.com/school/universite-mahajanga" }
+      },
+      "services": [
+        { "id": "srv-015", "name": "Faculté des Sciences", "description": "Formation en mathématiques, physique, chimie, biologie" },
+        { "id": "srv-016", "name": "Faculté des Lettres", "description": "Études littéraires et linguistiques" },
+        { "id": "srv-017", "name": "Bibliothèque universitaire", "description": "Centre de ressources documentaires" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/um/rectorat.jpg", "caption": "Bâtiment du rectorat", "credit": "Service Communication UM" },
+        { "url": "https://cdn.institutions.mg/um/amphitheatre.jpg", "caption": "Grand amphithéâtre", "credit": "Association étudiante" }
+      ],
+      "metadata": {
+        "established": 1977,
+        "capacity": 3500,
+        "lastRenovation": 2019,
+        "accreditation": "Ministère de l'Enseignement Supérieur et de la Recherche Scientifique"
+      }
+    },
+    {
+      "id": "hopital-antsirabe-001",
+      "type": { "category": "health", "subtype": "hospital" },
+      "name": "Hôpital de Référence Régionale Antsirabe",
+      "label": "HRR Antsirabe",
+      "description": "Hôpital de référence pour la région Vakinankaratra, offrant des soins secondaires et tertiaires.",
+      "coordinates": { "lat": -19.8639, "lng": 47.0317 },
+      "address": {
+        "street": "Route d'Antananarivo",
+        "commune": "Antsirabe I",
+        "district": "Antsirabe",
+        "region": "Vakinankaratra",
+        "postalCode": "110"
+      },
+      "contact": {
+        "phones": ["+261446789012", "+261206789012"],
+        "emails": ["direction@hrr-antsirabe.mg", "medical@hrr-antsirabe.mg"],
+        "website": "https://hrr-antsirabe.health.mg"
+      },
+      "services": [
+        { "id": "srv-018", "name": "Médecine interne", "description": "Prise en charge des pathologies médicales" },
+        { "id": "srv-019", "name": "Pédiatrie", "description": "Soins spécialisés pour enfants" },
+        { "id": "srv-020", "name": "Radiologie", "description": "Examens d'imagerie médicale" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/hrr-antsirabe/hopital.jpg", "caption": "Vue d'ensemble de l'hôpital", "credit": "Direction Régionale de la Santé Vakinankaratra" },
+        { "url": "https://cdn.institutions.mg/hrr-antsirabe/service-pediatrie.jpg", "caption": "Service de pédiatrie", "credit": "UNICEF Madagascar" }
+      ],
+      "metadata": {
+        "established": 1961,
+        "capacity": 300,
+        "lastRenovation": 2022,
+        "accreditation": "Ministère de la Santé Publique"
+      }
+    },
+    {
+      "id": "prefecture-diego-001",
+      "type": { "category": "administration", "subtype": "district_office" },
+      "name": "Préfecture de Diego Suarez",
+      "label": "Préfecture Diego",
+      "description": "Administration territoriale représentant l'État dans la région Diana.",
+      "coordinates": { "lat": -12.2787, "lng": 49.2919 },
+      "address": {
+        "street": "Rue Colbert",
+        "commune": "Antsiranana I",
+        "district": "Antsiranana",
+        "region": "Diana",
+        "postalCode": "201"
+      },
+      "contact": {
+        "phones": ["+261827890123", "+261207890123"],
+        "emails": ["prefecture@diana.gov.mg", "secretariat@prefecture-diego.mg"],
+        "website": "https://prefecture-diana.gov.mg"
+      },
+      "services": [
+        { "id": "srv-021", "name": "Administration générale", "description": "Coordination des services de l'État" },
+        { "id": "srv-022", "name": "Sécurité publique", "description": "Maintien de l'ordre et sécurité" },
+        { "id": "srv-023", "name": "Légalisations", "description": "Authentification de documents officiels" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/prefecture-diego/batiment.jpg", "caption": "Bâtiment de la préfecture", "credit": "Service Communication Diana" },
+        { "url": "https://cdn.institutions.mg/prefecture-diego/bureau-prefet.jpg", "caption": "Bureau du préfet", "credit": "Archives préfectorales" }
+      ],
+      "metadata": {
+        "established": 1896,
+        "capacity": 200,
+        "lastRenovation": 2016,
+        "accreditation": "Ministère de l'Intérieur et de la Décentralisation"
+      }
+    },
+    {
+      "id": "college-morondava-001",
+      "type": { "category": "education", "subtype": "secondary_school" },
+      "name": "Collège d'Enseignement Général Morondava",
+      "label": "CEG Morondava",
+      "description": "Établissement d'enseignement secondaire premier cycle dans la région Menabe.",
+      "coordinates": { "lat": -20.2833, "lng": 44.2833 },
+      "address": {
+        "street": "Avenue des Baobabs",
+        "commune": "Morondava",
+        "district": "Morondava",
+        "region": "Menabe",
+        "postalCode": "619"
+      },
+      "contact": {
+        "phones": ["+261959012345", "+261208901234"],
+        "emails": ["direction@ceg-morondava.mg", "administration@ceg-morondava.mg"],
+        "website": "https://ceg-morondava.edu.mg"
+      },
+      "services": [
+        { "id": "srv-024", "name": "Enseignement secondaire 1er cycle", "description": "Classes de 6ème à 3ème" },
+        { "id": "srv-025", "name": "Activités périscolaires", "description": "Sports et activités culturelles" },
+        { "id": "srv-026", "name": "Orientation scolaire", "description": "Conseil et orientation des élèves" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/ceg-morondava/etablissement.jpg", "caption": "Vue du collège", "credit": "CISCO Morondava" },
+        { "url": "https://cdn.institutions.mg/ceg-morondava/terrain-sport.jpg", "caption": "Terrain de sport", "credit": "Association sportive" }
+      ],
+      "metadata": {
+        "established": 1972,
+        "capacity": 800,
+        "lastRenovation": 2018,
+        "accreditation": "Ministère de l'Éducation Nationale"
+      }
+    },
+    {
+      "id": "gendarmerie-toliary-001",
+      "type": { "category": "security", "subtype": "gendarmerie" },
+      "name": "Brigade de Gendarmerie Toliara",
+      "label": "Gendarmerie Toliara",
+      "description": "Unité territoriale de la gendarmerie nationale assurant la sécurité publique dans la région Atsimo-Andrefana.",
+      "coordinates": { "lat": -23.3540, "lng": 43.6693 },
+      "address": {
+        "street": "Route Nationale 7",
+        "commune": "Toliara I",
+        "district": "Toliara",
+        "region": "Atsimo-Andrefana",
+        "postalCode": "601"
+      },
+      "contact": {
+        "phones": ["+261949012345", "+261209012345"],
+        "emails": ["brigade.toliara@gendarmerie.mg", "ops@gendarmerie-toliara.mg"]
+      },
+      "services": [
+        { "id": "srv-027", "name": "Sécurité publique", "description": "Patrouilles et maintien de l'ordre" },
+        { "id": "srv-028", "name": "Police judiciaire", "description": "Enquêtes et investigations" },
+        { "id": "srv-029", "name": "Sécurité routière", "description": "Contrôles et prévention routière" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/gendarmerie-toliara/caserne.jpg", "caption": "Caserne de gendarmerie", "credit": "Commandement Territorial" },
+        { "url": "https://cdn.institutions.mg/gendarmerie-toliara/vehicules.jpg", "caption": "Parc automobile", "credit": "Service Communication Gendarmerie" }
+      ],
+      "metadata": {
+        "established": 1960,
+        "capacity": 80,
+        "lastRenovation": 2020,
+        "accreditation": "Ministère de la Défense Nationale"
+      }
+    },
+    {
+      "id": "tribunal-tamatave-001",
+      "type": { "category": "justice", "subtype": "court" },
+      "name": "Tribunal de Première Instance de Tamatave",
+      "label": "TPI Tamatave",
+      "description": "Juridiction de première instance compétente pour les affaires civiles et pénales de la région Atsinanana.",
+      "coordinates": { "lat": -18.1442, "lng": 49.4019 },
+      "address": {
+        "street": "Place de la Justice",
+        "commune": "Toamasina I",
+        "district": "Toamasina",
+        "region": "Atsinanana",
+        "postalCode": "501"
+      },
+      "contact": {
+        "phones": ["+261539012345", "+261209012345"],
+        "emails": ["greffe@tpi-tamatave.justice.mg", "president@tpi-tamatave.mg"],
+        "website": "https://tpi-tamatave.justice.mg"
+      },
+      "services": [
+        { "id": "srv-030", "name": "Juridiction civile", "description": "Traitement des litiges civils" },
+        { "id": "srv-031", "name": "Juridiction pénale", "description": "Jugement des infractions pénales" },
+        { "id": "srv-032", "name": "Greffe", "description": "Services administratifs du tribunal" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/tpi-tamatave/palais-justice.jpg", "caption": "Palais de justice", "credit": "Ministère de la Justice" },
+        { "url": "https://cdn.institutions.mg/tpi-tamatave/salle-audience.jpg", "caption": "Salle d'audience principale", "credit": "Cour Suprême Madagascar" }
+      ],
+      "metadata": {
+        "established": 1910,
+        "capacity": 50,
+        "lastRenovation": 2019,
+        "accreditation": "Ministère de la Justice"
+      }
+    },
+    {
+      "id": "epp-sambava-001",
+      "type": { "category": "education", "subtype": "primary_school" },
+      "name": "École Primaire Publique Sambava Centre",
+      "label": "EPP Sambava Centre",
+      "description": "École primaire publique desservant le centre-ville de Sambava et accueillant 280 élèves.",
+      "coordinates": { "lat": -14.2667, "lng": 50.1667 },
+      "address": {
+        "street": "Avenue de l'Indépendance",
+        "commune": "Sambava",
+        "district": "Sambava",
+        "region": "SAVA",
+        "postalCode": "206"
+      },
+      "contact": {
+        "phones": ["+261889012345", "+261209012345"],
+        "emails": ["direction@epp-sambava.mg", "secretariat@epp-sambava.mg"]
+      },
+      "services": [
+        { "id": "srv-033", "name": "Enseignement primaire", "description": "Scolarité du CP1 au CM2" },
+        { "id": "srv-034", "name": "Alphabétisation adultes", "description": "Cours du soir pour adultes" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/epp-sambava/ecole.jpg", "caption": "Bâtiment scolaire", "credit": "CISCO Sambava" },
+        { "url": "https://cdn.institutions.mg/epp-sambava/classe.jpg", "caption": "Salle de classe", "credit": "Coopération française" }
+      ],
+      "metadata": {
+        "established": 1968,
+        "capacity": 280,
+        "lastRenovation": 2021,
+        "accreditation": "Ministère de l'Éducation Nationale"
+      }
+    },
+    {
+      "id": "csb2-mananjary-001",
+      "type": { "category": "health", "subtype": "csb2" },
+      "name": "Centre de Santé de Base niveau 2 Mananjary",
+      "label": "CSB2 Mananjary",
+      "description": "Centre de santé de référence pour le district de Mananjary, région Vatovavy-Fitovinany.",
+      "coordinates": { "lat": -21.2167, "lng": 48.3333 },
+      "address": {
+        "street": "Rue de la Santé",
+        "commune": "Mananjary",
+        "district": "Mananjary",
+        "region": "Vatovavy-Fitovinany",
+        "postalCode": "316"
+      },
+      "contact": {
+        "phones": ["+261729012345", "+261209012346"],
+        "emails": ["csb2.mananjary@sante.mg", "medecin@csb2-mananjary.mg"]
+      },
+      "services": [
+        { "id": "srv-035", "name": "Soins curatifs", "description": "Consultations médicales générales" },
+        { "id": "srv-036", "name": "Soins préventifs", "description": "Vaccination et sensibilisation" },
+        { "id": "srv-037", "name": "Maternité", "description": "Suivi prénatal et accouchements" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/csb2-mananjary/centre.jpg", "caption": "Entrée du centre de santé", "credit": "Direction Régionale Santé" },
+        { "url": "https://cdn.institutions.mg/csb2-mananjary/maternite.jpg", "caption": "Service maternité", "credit": "USAID Madagascar" }
+      ],
+      "metadata": {
+        "established": 1988,
+        "capacity": 100,
+        "lastRenovation": 2020,
+        "accreditation": "Ministère de la Santé Publique"
+      }
+    },
+    {
+      "id": "mairie-mahajanga-001",
+      "type": { "category": "administration", "subtype": "townhall" },
+      "name": "Commune Urbaine de Mahajanga",
+      "label": "CUM",
+      "description": "Administration municipale de Mahajanga, principale ville portuaire de la côte ouest malgache.",
+      "coordinates": { "lat": -15.7167, "lng": 46.3167 },
+      "address": {
+        "street": "Place de l'Indépendance",
+        "commune": "Mahajanga I",
+        "district": "Mahajanga",
+        "region": "Boeny",
+        "postalCode": "401"
+      },
+      "contact": {
+        "phones": ["+261629012345", "+261209012347"],
+        "emails": ["mairie@mahajanga.mg", "urbanisme@cum-mahajanga.mg"],
+        "website": "https://mahajanga-ville.mg",
+        "socials": { "facebook": "https://facebook.com/cum.mahajanga" }
+      },
+      "services": [
+        { "id": "srv-038", "name": "État civil", "description": "Délivrance d'actes d'état civil" },
+        { "id": "srv-039", "name": "Voirie urbaine", "description": "Entretien des routes municipales" },
+        { "id": "srv-040", "name": "Collecte des déchets", "description": "Service de propreté urbaine" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/cum-mahajanga/hotel-ville.jpg", "caption": "Hôtel de ville de Mahajanga", "credit": "Service Communication CUM" },
+        { "url": "https://cdn.institutions.mg/cum-mahajanga/salle-fetes.jpg", "caption": "Salle des fêtes municipale", "credit": "Archives municipales" }
+      ],
+      "metadata": {
+        "established": 1745,
+        "capacity": 350000,
+        "lastRenovation": 2017,
+        "accreditation": "Ministère de l'Intérieur et de la Décentralisation"
+      }
+    },
+    {
+      "id": "lycee-hell-ville-001",
+      "type": { "category": "education", "subtype": "high_school" },
+      "name": "Lycée Français de Hell-Ville",
+      "label": "LF Hell-Ville",
+      "description": "Établissement d'enseignement secondaire français situé à Nosy Be, proposant un cursus bilingue.",
+      "coordinates": { "lat": -13.4058, "lng": 48.2772 },
+      "address": {
+        "street": "Rue du Lycée",
+        "commune": "Hell-Ville",
+"district": "Nosy Be",
+        "region": "Diana",
+        "postalCode": "207"
+      },
+      "contact": {
+        "phones": ["+261829012345", "+261209012348"],
+        "emails": ["direction@lf-hellville.mg", "scolarite@lf-hellville.mg"],
+        "website": "https://lf-hellville.edu.mg",
+        "socials": { "facebook": "https://facebook.com/lycee.hellville" }
+      },
+      "services": [
+        { "id": "srv-041", "name": "Enseignement bilingue", "description": "Cursus français-malgache" },
+        { "id": "srv-042", "name": "Préparation BEPC/BAC", "description": "Préparation aux examens nationaux" },
+        { "id": "srv-043", "name": "Activités nautiques", "description": "Sports aquatiques et voile" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/lf-hellville/lycee.jpg", "caption": "Façade du lycée français", "credit": "Direction Établissement" },
+        { "url": "https://cdn.institutions.mg/lf-hellville/laboratoire.jpg", "caption": "Laboratoire de sciences", "credit": "Coopération française" }
+      ],
+      "metadata": {
+        "established": 1963,
+        "capacity": 600,
+        "lastRenovation": 2019,
+        "accreditation": "Ministère de l'Éducation Nationale"
+      }
+    },
+    {
+      "id": "hopital-manakara-001",
+      "type": { "category": "health", "subtype": "hospital" },
+      "name": "Hôpital de District de Manakara",
+      "label": "HD Manakara",
+      "description": "Hôpital de référence pour le district de Manakara, offrant des soins secondaires à la population locale.",
+      "coordinates": { "lat": -22.1333, "lng": 48.0167 },
+      "address": {
+        "street": "Route de Fianarantsoa",
+        "commune": "Manakara Atsimo",
+        "district": "Manakara",
+        "region": "Vatovavy-Fitovinany",
+        "postalCode": "317"
+      },
+      "contact": {
+        "phones": ["+261729012346", "+261209012349"],
+        "emails": ["direction@hd-manakara.mg", "urgences@hd-manakara.mg"],
+        "website": "https://hd-manakara.health.mg"
+      },
+      "services": [
+        { "id": "srv-044", "name": "Médecine générale", "description": "Consultations et hospitalisations" },
+        { "id": "srv-045", "name": "Chirurgie mineure", "description": "Interventions chirurgicales simples" },
+        { "id": "srv-046", "name": "Laboratoire", "description": "Analyses médicales de base" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/hd-manakara/hopital.jpg", "caption": "Bâtiment principal de l'hôpital", "credit": "Direction Santé Vatovavy-Fitovinany" },
+        { "url": "https://cdn.institutions.mg/hd-manakara/bloc-operatoire.jpg", "caption": "Bloc opératoire", "credit": "Médecins Sans Frontières" }
+      ],
+      "metadata": {
+        "established": 1975,
+        "capacity": 120,
+        "lastRenovation": 2021,
+        "accreditation": "Ministère de la Santé Publique"
+      }
+    },
+    {
+      "id": "sous-prefecture-vangaindrano-001",
+      "type": { "category": "administration", "subtype": "sub_prefecture" },
+      "name": "Sous-Préfecture de Vangaindrano",
+      "label": "Sous-Préfecture Vangaindrano",
+      "description": "Administration territoriale déconcentrée représentant l'État au niveau du district de Vangaindrano.",
+      "coordinates": { "lat": -23.3500, "lng": 47.6000 },
+      "address": {
+        "street": "Avenue de la République",
+        "commune": "Vangaindrano",
+        "district": "Vangaindrano",
+        "region": "Atsimo-Atsinanana",
+        "postalCode": "318"
+      },
+      "contact": {
+        "phones": ["+261929012345", "+261209012350"],
+        "emails": ["sous.prefecture@vangaindrano.gov.mg", "secretariat@sp-vangaindrano.mg"]
+      },
+      "services": [
+        { "id": "srv-047", "name": "Administration territoriale", "description": "Coordination services déconcentrés" },
+        { "id": "srv-048", "name": "Autorisations administratives", "description": "Délivrance de permis et licences" },
+        { "id": "srv-049", "name": "Recensement", "description": "Opérations de recensement et statistiques" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/sp-vangaindrano/batiment.jpg", "caption": "Bâtiment de la sous-préfecture", "credit": "Service Communication Région" },
+        { "url": "https://cdn.institutions.mg/sp-vangaindrano/accueil.jpg", "caption": "Hall d'accueil du public", "credit": "Archives sous-préfectorales" }
+      ],
+      "metadata": {
+        "established": 1960,
+        "capacity": 30,
+        "lastRenovation": 2018,
+        "accreditation": "Ministère de l'Intérieur et de la Décentralisation"
+      }
+    },
+    {
+      "id": "ceg-ambositra-001",
+      "type": { "category": "education", "subtype": "secondary_school" },
+      "name": "Collège d'Enseignement Général Ambositra",
+      "label": "CEG Ambositra",
+      "description": "Établissement d'enseignement secondaire premier cycle dans la région Amoron'i Mania, réputé pour ses activités artistiques.",
+      "coordinates": { "lat": -20.5333, "lng": 47.2333 },
+      "address": {
+        "street": "Rue de l'Artisanat",
+        "commune": "Ambositra",
+        "district": "Ambositra",
+        "region": "Amoron'i Mania",
+        "postalCode": "303"
+      },
+      "contact": {
+        "phones": ["+261479012345", "+261209012351"],
+        "emails": ["direction@ceg-ambositra.mg", "arts@ceg-ambositra.mg"],
+        "socials": { "facebook": "https://facebook.com/ceg.ambositra" }
+      },
+      "services": [
+        { "id": "srv-050", "name": "Enseignement général", "description": "Programme standard 6ème à 3ème" },
+        { "id": "srv-051", "name": "Ateliers d'artisanat", "description": "Formation en marqueterie et sculpture" },
+        { "id": "srv-052", "name": "Club culturel", "description": "Activités artistiques et culturelles" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/ceg-ambositra/college.jpg", "caption": "Vue du collège d'Ambositra", "credit": "CISCO Amoron'i Mania" },
+        { "url": "https://cdn.institutions.mg/ceg-ambositra/atelier-art.jpg", "caption": "Atelier d'artisanat", "credit": "UNESCO Madagascar" }
+      ],
+      "metadata": {
+        "established": 1970,
+        "capacity": 650,
+        "lastRenovation": 2020,
+        "accreditation": "Ministère de l'Éducation Nationale"
+      }
+    },
+    {
+      "id": "commissariat-antsiranana-001",
+      "type": { "category": "security", "subtype": "police_station" },
+      "name": "Commissariat de Police d'Antsiranana",
+      "label": "Commissariat Antsiranana",
+      "description": "Commissariat central de police assurant la sécurité urbaine et la police judiciaire à Antsiranana.",
+      "coordinates": { "lat": -12.2792, "lng": 49.2924 },
+      "address": {
+        "street": "Rue de la Paix",
+        "commune": "Antsiranana I",
+        "district": "Antsiranana",
+        "region": "Diana",
+        "postalCode": "201"
+      },
+      "contact": {
+        "phones": ["+261827890124", "+261209012352"],
+        "emails": ["commissariat.antsiranana@police.mg", "ops@police-antsiranana.mg"]
+      },
+      "services": [
+        { "id": "srv-053", "name": "Police de proximité", "description": "Patrouilles et sécurité de quartier" },
+        { "id": "srv-054", "name": "Plaintes et mains courantes", "description": "Accueil et traitement des plaintes" },
+        { "id": "srv-055", "name": "Police des étrangers", "description": "Contrôle et régularisation" }
+      ],
+      "photos": [
+        { "url": "https://cdn.institutions.mg/police-antsiranana/commissariat.jpg", "caption": "Façade du commissariat", "credit": "Direction Générale Police Nationale" },
+        { "url": "https://cdn.institutions.mg/police-antsiranana/accueil.jpg", "caption": "Hall d'accueil du public", "credit": "Service Communication Police" }
+      ],
+      "metadata": {
+        "established": 1955,
+        "capacity": 60,
+        "lastRenovation": 2019,
+        "accreditation": "Ministère de la Sécurité Publique"
+      }
+    }
+  ]
+}
