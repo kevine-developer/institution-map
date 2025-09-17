@@ -1,17 +1,31 @@
 "use client";
-import  { useEffect } from 'react'
-import { useMap } from 'react-leaflet';
+import { useEffect, useState } from "react";
+import { useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { getSelectedIcon } from '@/app/utils/getSelectedIcon';
+import { getSelectedIcon } from "@/app/utils/getSelectedIcon";
 
 interface MarkersWithClustersProps {
   institutions: any[];
   onSelectItem: (institution: any) => void;
 }
 
-function MarkersWithClusters({ institutions, onSelectItem }: MarkersWithClustersProps) {
+interface PopupState {
+  institution: any;
+  position: { x: number; y: number };
+  visible: boolean;
+}
+
+function MarkersWithClusters({
+  institutions,
+  onSelectItem,
+}: MarkersWithClustersProps) {
   const map = useMap();
+  const [popup, setPopup] = useState<PopupState>({
+    institution: null,
+    position: { x: 0, y: 0 },
+    visible: false,
+  });
 
   useEffect(() => {
     if (!("markerClusterGroup" in L)) return;
@@ -49,20 +63,22 @@ function MarkersWithClusters({ institutions, onSelectItem }: MarkersWithClusters
       // Clique = sélection
       marker.on("click", () => onSelectItem(inst));
 
-      // Hover = affiche popup
-      marker.on("mouseover", () => {
-        marker
-          .bindPopup(`<b>${inst.name}</b>`, {
-            offset: L.point(0, -30),
-            closeButton: false,
-            autoClose: false,
-          })
-          .openPopup();
+      // Hover = affiche popup personnalisé
+      marker.on("mouseover", (e) => {
+        const containerPoint = map.latLngToContainerPoint([lat, lng]);
+        setPopup({
+          institution: inst,
+          position: {
+            x: containerPoint.x,
+            y: containerPoint.y - 40, // Offset vers le haut
+          },
+          visible: true,
+        });
       });
 
       // Sortie de la souris = ferme popup
       marker.on("mouseout", () => {
-        marker.closePopup();
+        setPopup((prev) => ({ ...prev, visible: false }));
       });
 
       markerClusterGroup.addLayer(marker);
@@ -70,13 +86,65 @@ function MarkersWithClusters({ institutions, onSelectItem }: MarkersWithClusters
 
     map.addLayer(markerClusterGroup);
 
-    return () => {
-      if (map && markerClusterGroup) map.removeLayer(markerClusterGroup);
+    // Gestion du déplacement de la carte
+    const handleMapMove = () => {
+      if (popup.visible && popup.institution) {
+        const lat = Number(
+          popup.institution.coordinates?.lat ?? popup.institution.lat
+        );
+        const lng = Number(
+          popup.institution.coordinates?.lng ?? popup.institution.lng
+        );
+        const containerPoint = map.latLngToContainerPoint([lat, lng]);
+        setPopup((prev) => ({
+          ...prev,
+          position: {
+            x: containerPoint.x,
+            y: containerPoint.y - 40,
+          },
+        }));
+      }
     };
-  }, [institutions, map, onSelectItem]);
 
-  return null;
+    map.on("move", handleMapMove);
+    map.on("zoom", handleMapMove);
+
+    return () => {
+      if (map && markerClusterGroup) {
+        map.removeLayer(markerClusterGroup);
+        map.off("move", handleMapMove);
+        map.off("zoom", handleMapMove);
+      }
+    };
+  }, [institutions, map, onSelectItem, popup.visible, popup.institution]);
+
+  return (
+    <>
+      {/* Popup personnalisé */}
+      {popup.visible && popup.institution && (
+        <div
+          className="absolute z-[1000] pointer-events-none"
+          style={{
+            left: popup.position.x,
+            top: popup.position.y,
+            transform: "translate(-40%, -100%)",
+          }}
+        >
+          <div className="p-3 bg-white rounded-xl shadow-lg border border-slate-200 w-52 relative">
+            {/* Petite flèche pointant vers le marqueur */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
+              <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-white"></div>
+            </div>
+
+            <h3 className="font-semibold text-slate-800 text-sm mb-1">
+              {popup.institution.name}
+            </h3>
+            <p className="text-xs text-slate-500 leading-snug"></p>
+          </div>
+        </div>
+      )}
+    </>
+  );
 }
 
-export default MarkersWithClusters
-
+export default MarkersWithClusters;
