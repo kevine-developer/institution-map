@@ -36,7 +36,7 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+            className="p-2 rounded-full hover:bg-emerald-500  cursor-pointer"
           >
             <X />
           </button>
