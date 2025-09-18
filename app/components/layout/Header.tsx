@@ -1,6 +1,7 @@
 "use client";
 import { ThemeToggle } from "@/app/utils/ThemeProvider";
 import { MapPin, Menu, Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export function Header() {
   return (
@@ -8,8 +9,8 @@ export function Header() {
       <div className="container mx-auto px-4 h-full flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-sm transition-transform duration-200 hover:scale-110">
-              <MapPin className="w-5 h-5" />
+            <div className=" bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-sm transition-transform duration-200 hover:scale-110">
+              <Image src={"/logo.png"} alt="Logo" width={40} height={40}  />
             </div>
             <div>
               <h1 className="font-heading font-bold   bg-clip-text">
@@ -24,8 +25,7 @@ export function Header() {
         </div>
      
 
-        <div className="flex items-center gap-2 ">
-          <div className="inline-flex gap-2">
+          <div className="inline-flex gap-4">
             <a
               href="https://github.com/kevine-developer/institution-map"
               target="_blank"
@@ -39,7 +39,7 @@ export function Header() {
             <ThemeToggle />
           </div>
 
-        </div>
+      
       </div>
     </header>
   );

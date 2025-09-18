@@ -1,6 +1,6 @@
 export type Theme = 'light' | 'dark';
 
-export type InstitutionCategory = 'education' | 'health' | 'administration' | 'security' | 'justice';
+export type InstitutionCategory = 'education' | 'sante' | 'administration' | 'security' | 'justice';
 
 export interface Filters {
   searchTerm: string;
