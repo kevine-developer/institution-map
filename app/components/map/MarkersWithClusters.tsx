@@ -78,7 +78,7 @@ function MarkersWithClusters({
 
       // Sortie de la souris = ferme popup
       marker.on("mouseout", () => {
-        setPopup((prev) => ({ ...prev, visible: false }));
+        setPopup(prev => ({ ...prev, visible: false }));
       });
 
       markerClusterGroup.addLayer(marker);
@@ -89,14 +89,10 @@ function MarkersWithClusters({
     // Gestion du déplacement de la carte
     const handleMapMove = () => {
       if (popup.visible && popup.institution) {
-        const lat = Number(
-          popup.institution.coordinates?.lat ?? popup.institution.lat
-        );
-        const lng = Number(
-          popup.institution.coordinates?.lng ?? popup.institution.lng
-        );
+        const lat = Number(popup.institution.coordinates?.lat ?? popup.institution.lat);
+        const lng = Number(popup.institution.coordinates?.lng ?? popup.institution.lng);
         const containerPoint = map.latLngToContainerPoint([lat, lng]);
-        setPopup((prev) => ({
+        setPopup(prev => ({
           ...prev,
           position: {
             x: containerPoint.x,
@@ -127,7 +123,7 @@ function MarkersWithClusters({
           style={{
             left: popup.position.x,
             top: popup.position.y,
-            transform: "translate(-40%, -100%)",
+            transform: "translate(-50%, -100%)",
           }}
         >
           <div className="p-3 bg-white rounded-xl shadow-lg border border-slate-200 w-52 relative">
@@ -135,11 +131,13 @@ function MarkersWithClusters({
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
               <div className="w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-white"></div>
             </div>
-
+            
             <h3 className="font-semibold text-slate-800 text-sm mb-1">
               {popup.institution.name}
             </h3>
-            <p className="text-xs text-slate-500 leading-snug"></p>
+            <p className="text-xs text-slate-500 leading-snug">
+
+            </p>
           </div>
         </div>
       )}

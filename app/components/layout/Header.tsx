@@ -1,5 +1,6 @@
-
-import { MapPin, Menu, Github, ExternalLink } from "lucide-react"
+"use client";
+import { ThemeToggle } from "@/app/utils/ThemeProvider";
+import { MapPin, Menu, Github, ExternalLink } from "lucide-react";
 
 export function Header() {
   return (
@@ -21,21 +22,28 @@ export function Header() {
             Beta
           </div>
         </div>
+     
 
         <div className="flex items-center gap-2 ">
-          <div   className="hidden md:inline-flex" >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-3 py-1.5 bg-accent hover:bg-accent/90 text-accent-foreground rounded-md text-sm font-medium transition-colors">
+          <div className="hidden md:inline-flex">
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-3 py-1.5 bg-accent hover:bg-accent/90 text-accent-foreground rounded-md text-sm font-medium transition-colors"
+            >
               <Github className="w-4 h-4 mr-2" />
               Code source
               <ExternalLink className="w-3 h-3 ml-1" />
             </a>
+            <ThemeToggle />
           </div>
 
-          <div   className="lg:hidden">
+          <div className="lg:hidden">
             <Menu className="w-4 h-4" />
           </div>
         </div>
       </div>
     </header>
-  )
+  );
 }

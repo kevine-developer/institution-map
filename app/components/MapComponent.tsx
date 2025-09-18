@@ -12,6 +12,7 @@ import { defaultCenter, defaultZoom, tileLayers } from "../utils/mapUtils";
 
 import { getSelectedIcon } from "../utils/getSelectedIcon";
 import MarkersWithClusters from "./map/MarkersWithClusters";
+import { useTheme } from "../utils/ThemeProvider";
 
 declare module "leaflet" {
   function markerClusterGroup(options?: any): L.LayerGroup;
@@ -55,6 +56,10 @@ const MapComponent: React.FC<MapComponentProps> = ({
   selectedInstitution,
   onSelectItem,
 }) => {
+
+
+const { theme, resolvedTheme } = useTheme();
+
   const validInstitutions = useMemo(
     () =>
       institutions.filter(
@@ -83,7 +88,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
       : defaultCenter;
 
   const zoom = selectedInstitution ? 14 : defaultZoom;
-  const currentTileLayer = tileLayers.light;
+  const currentTileLayer = tileLayers[theme === "dark" || resolvedTheme === "dark" ? "dark" : "light"];
 
   return (
     <div className="relative h-full w-full">
@@ -95,7 +100,7 @@ const MapComponent: React.FC<MapComponentProps> = ({
         zoomControl={false}
       >
         <TileLayer
-          key="light"
+          key={theme === "dark" || resolvedTheme === "dark" ? "dark" : "light"}
           attribution={currentTileLayer.attribution}
           url={currentTileLayer.url}
         />
