@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-// ❌ import direct
 // import MapComponent from "./components/MapComponent";
 import { Institution } from "./types";
 import InstitutionDetail from "./components/InstitutionDetail";
@@ -9,7 +8,6 @@ import Reload from "./components/ui/Reload";
 import Loading from "./components/ui/Loading";
 import dynamic from "next/dynamic";
 
-// ✅ import dynamique sans SSR
 const MapComponent = dynamic(() => import("./components/MapComponent"), {
   ssr: false,
 });

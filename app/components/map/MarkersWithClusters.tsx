@@ -57,7 +57,7 @@ function MarkersWithClusters({
       if (!lat || !lng || isNaN(lat) || isNaN(lng)) return;
 
       const marker = L.marker([lat, lng], {
-        icon: getSelectedIcon(inst.type.category),
+        icon: getSelectedIcon(inst.category_code),
       });
 
       // Clique = sélection
