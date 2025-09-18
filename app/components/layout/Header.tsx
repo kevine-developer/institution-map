@@ -12,7 +12,7 @@ export function Header() {
               <MapPin className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="font-heading font-bold text-lg  bg-clip-text">
+              <h1 className="font-heading font-bold   bg-clip-text">
                 Institutions Publiques
               </h1>
               <p className="text-xs text-muted-foreground">Madagascar</p>
@@ -25,23 +25,20 @@ export function Header() {
      
 
         <div className="flex items-center gap-2 ">
-          <div className="hidden md:inline-flex gap-2">
+          <div className="inline-flex gap-2">
             <a
-              href="https://github.com"
+              href="https://github.com/kevine-developer/institution-map"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center p-2 gap-1 hover:bg-emerald-800/20 transition-colors rounded-md text-sm font-medium "
+              className="inline-flex items-center p-2  hover:bg-emerald-500  transition-colors rounded-md text-sm font-medium "
             >
               <Github className="w-4 h-4 mr-2" />
               Code source
-              <ExternalLink className="w-4 h-4 mr-2" />
+
             </a>
             <ThemeToggle />
           </div>
 
-          <div className="lg:hidden">
-            <Menu className="w-4 h-4" />
-          </div>
         </div>
       </div>
     </header>

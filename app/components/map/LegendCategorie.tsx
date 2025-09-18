@@ -33,7 +33,7 @@ function LegendCategorie({ onCategoryClick }: LegendCategorieProps) {
             return (
               <button
                 key={category}
-                className="flex items-center gap-2 text-sm w-full hover:bg-accent/50 p-1 cursor-pointer rounded-md hover:bg-emerald-800/10 transition-colors"
+                className="flex items-center gap-2 text-sm w-full hover:bg-accent/50 p-1 cursor-pointer rounded-md hover:bg-emerald-500  transition-colors"
                 onClick={() => onCategoryClick(category)}
               >
                 <div
