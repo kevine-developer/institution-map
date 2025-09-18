@@ -78,7 +78,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <main className="overflow-auto flex flex-grow relative bg-slate-50 dark:bg-slate-900">
+    <main className="overflow-auto flex flex-grow relative ">
       {isLoading && <Loading institutions={institutions} />}
 
       {error && !isLoading && (

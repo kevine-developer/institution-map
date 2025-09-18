@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { Institution } from "../types";
 import { X } from "lucide-react";
@@ -8,39 +8,42 @@ interface InstitutionDetailProps {
   onClose: () => void;
 }
 
-const InstitutionDetail: React.FC<InstitutionDetailProps> = ({ institution, onClose }) => {
+const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
+  institution,
+  onClose,
+}) => {
   return (
-    <div className="fixed inset-0 flex justify-end z-50">
+    <div className="fixed inset-0 flex justify-end items-end z-50 ">
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black/40"
+        className="absolute inset-0 backdrop-blur-xs "
         onClick={onClose}
       ></div>
 
       {/* Panel */}
-      <div className="relative w-full max-w-md h-full bg-white dark:bg-slate-900 shadow-xl flex flex-col">
+      <div className="z-60 w-full max-w-md h-[92vh]  bg-background  ">
         {/* Header */}
         <header className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-700">
           <div>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100">
+            <h2 className="text-xl font-bold ">
               {institution.label || institution.name}
             </h2>
             {institution.category_label && (
-              <p className="text-sm text-slate-500">{institution.category_label}</p>
+              <p className="text-sm text-slate-500">
+                {institution.category_label}
+              </p>
             )}
           </div>
           <button
             onClick={onClose}
             className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
           >
-           <X  />
+            <X />
           </button>
         </header>
 
         {/* Content */}
-        <main className="flex-grow overflow-y-auto p-4 space-y-4">
-       
-        </main>
+        <main className="flex-grow p-4 space-y-4 "></main>
       </div>
     </div>
   );
