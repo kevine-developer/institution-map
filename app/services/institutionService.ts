@@ -71,7 +71,7 @@ const handleApiError = async (response: Response) => {
 const mapApiCategoryToLocal = (apiCategory?: string): InstitutionCategory => {
     if (!apiCategory) return 'administration';
     const categoryMapping: Record<string, InstitutionCategory> = {
-        'EDUCATION': 'education', 'SANTE': 'health', 'HEALTH': 'health', 'ADMINISTRATION': 'administration',
+        'EDUCATION': 'education', 'SANTE': 'sante', 'ADMINISTRATION': 'administration',
         'SECURITE': 'security', 'SECURITY': 'security', 'JUSTICE': 'justice',
     };
     return categoryMapping[apiCategory.toUpperCase()] || 'administration';
