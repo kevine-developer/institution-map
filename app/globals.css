@@ -20,16 +20,50 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: oklch(12.9% .042 264.695);
-    --foreground: oklch(97.7% .009 255);
-  }
+
+.dark {
+  /* Thème dark */
+  --background: 17 24 39;
+  --foreground: 255 255 255;
+  --primary: 96 165 250;
+  --secondary: 107 114 128;
+  --accent: 74 222 128;
+  --muted: 31 41 55;
+  --border: 55 65 81;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Utilitaires Tailwind personnalisés */
+@layer utilities {
+  .bg-background {
+    background-color: rgb(var(--background));
+  }
+  
+  .text-foreground {
+    color: rgb(var(--foreground));
+  }
+  
+  .bg-primary {
+    background-color: rgb(var(--primary));
+  }
+  
+  .bg-muted {
+    background-color: rgb(var(--muted));
+  }
+  
+  .border-border {
+    border-color: rgb(var(--border));
+  }
 }
 
