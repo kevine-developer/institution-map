@@ -8,9 +8,6 @@
   --secondary-color: oklch(46.3% .045 257.4);
 --color-accent: oklch(37.8% .077 168.94);
 
-  --color-amber-500: oklch(78% .16 85);
-  --color-rose-500: oklch(68% .21 15);
-  --color-indigo-500: oklch(58% .18 265);
 }
 
 @theme inline {
@@ -23,19 +20,9 @@
 
 .dark {
   /* Thème dark */
-  --background: 17 24 39;
-  --foreground: 255 255 255;
-  --primary: 96 165 250;
-  --secondary: 107 114 128;
-  --accent: 74 222 128;
-  --muted: 31 41 55;
-  --border: 55 65 81;
-}
+  --background: oklch(12.9% .042 264.695);
+  --foreground:  oklch(97.7% .009 255);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -44,26 +31,4 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Utilitaires Tailwind personnalisés */
-@layer utilities {
-  .bg-background {
-    background-color: rgb(var(--background));
-  }
-  
-  .text-foreground {
-    color: rgb(var(--foreground));
-  }
-  
-  .bg-primary {
-    background-color: rgb(var(--primary));
-  }
-  
-  .bg-muted {
-    background-color: rgb(var(--muted));
-  }
-  
-  .border-border {
-    border-color: rgb(var(--border));
-  }
-}
 

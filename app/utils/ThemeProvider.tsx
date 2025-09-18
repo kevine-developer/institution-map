@@ -1,5 +1,5 @@
 
-'use client';
+"use client";
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import {
@@ -162,10 +162,10 @@ export function ThemeToggle() {
 
       <button
         onClick={toggleTheme}
-        className=" cursor-pointer"
+        className=" cursor-pointer "
         aria-label="Toggle theme"
       >
-        {resolvedTheme === 'dark' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />  }
+        {resolvedTheme === 'dark' ? <Moon className="w-5 h-5 " /> : <Sun className="w-5 h-5" />  }
       </button>
       
 
