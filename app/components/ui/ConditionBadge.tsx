@@ -20,9 +20,9 @@ function ConditionBadge({ condition }: ConditionBadgeProps) {
   };
 
   return (
-    <div className={`flex items-center gap-2 px-1  rounded-xl font-medium text-sm shadow-sm border ${getConditionStyle()}`}>
+    <div className={` h-8 flex items-center gap-2 px-2  rounded-xl font-medium text-sm shadow-sm border ${getConditionStyle()}`}>
       <Building2 size={16} />
-      <p> État: {condition || 'Non spécifié'}</p>
+      <p> État général du bâtiment: {condition || 'Non spécifié'}</p>
     </div>
   );
 };

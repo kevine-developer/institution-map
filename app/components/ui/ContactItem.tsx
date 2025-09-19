@@ -20,19 +20,19 @@ function ContactItem({ href, label, description, icon, external = false }: Conta
     className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 focus:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors group"
     aria-label={`${description}: ${label}`}
   >
-    <div className="p-2 bg-blue-50 rounded-lg text-blue-600 group-hover:bg-blue-100 transition-colors">
+    <span className="p-2 bg-blue-50 rounded-lg text-emerald-600 group-hover:bg-emerald-100 transition-colors">
       {icon}
-    </div>
+    </span>
     <div className="flex-1 min-w-0">
-      <div className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors truncate">
+      <p className="font-medium  group-hover:text-emerald-600 transition-colors truncate">
         {label}
-      </div>
-      <div className="text-sm text-gray-500 mt-0.5">{description}</div>
+      </p>
+      <div className="text-sm mt-0.5">{description}</div>
     </div>
     {external && (
-      <div className="text-gray-400 group-hover:text-blue-500 transition-colors">
+      <span className=" group-hover:text-emerald-500 transition-colors">
         <Globe size={16} />
-      </div>
+      </span>
     )}
   </Link>
   )

@@ -41,8 +41,8 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
   }, [onClose]);
 
   return (
-    <div 
-      className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:justify-end bg-black/20 backdrop-blur-sm"
+    <aside
+      className="fixed inset-0 z-50 flex items-end justify-center  sm:items-center sm:justify-end bg-black/20 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="institution-title"
@@ -57,22 +57,22 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
       {/* Panel */}
       <div 
         ref={panelRef}
-        className="relative w-full max-w-2xl h-[95vh] sm:h-[90vh] bg-white shadow-2xl rounded-t-2xl sm:rounded-2xl overflow-hidden border border-gray-100"
+        className="relative w-full max-w-xl  bg-background shadow-2xl rounded-t-2xl sm:rounded-2xl overflow-hidden border border-gray-100"
       >
         {/* Header avec gradient subtil */}
-        <header className="sticky top-0 z-10 bg-gradient-to-r from-blue-50 to-indigo-50 border-b border-gray-200 px-6 py-4">
+        <header className="sticky top-0 z-10 bg-gradient-to-r  border-b border-gray-200 px-6 py-4">
           <div className="flex items-start justify-between">
             <div className="flex-1 pr-4">
               <h2 
                 id="institution-title"
-                className="text-2xl font-bold text-gray-900 leading-tight mb-1"
+                className="text-lg font-bold  leading-tight mb-1"
               >
                 {institution.label || institution.name}
               </h2>
               {institution.category_label && (
                 <div className="flex items-center gap-2">
-                  <Building2 size={16} className="text-gray-500" />
-                  <span className="text-sm font-medium text-gray-600 bg-white/60 px-3 py-1 rounded-full">
+                  <Building2 size={16} className="text-emerald-500" />
+                  <span className="text-sm font-medium text-gray-600 bg-emerald/60 px-3 py-1 rounded-full">
                     {institution.category_label}
                   </span>
                 </div>
@@ -81,10 +81,10 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
             <button
               ref={closeButtonRef}
               onClick={onClose}
-              className="shrink-0 p-2 rounded-full hover:bg-white/80 focus:bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+              className="shrink-0 p-2 rounded-full hover:bg-emerald-700  cursor-pointer   transition-colors"
               aria-label="Fermer les détails de l'institution"
             >
-              <X size={20} className="text-gray-600" />
+              <X size={18} className="" />
             </button>
           </div>
         </header>
@@ -165,7 +165,7 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
           </div>
         </main>
       </div>
-    </div>
+    </aside>
   );
 };
 
