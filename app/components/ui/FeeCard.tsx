@@ -9,10 +9,10 @@ interface FeeProps {
 
 export default function FeeCard({ fee }: FeeProps) {
   return (
-     <div className="p-4 bg-blue-50 rounded-lg border border-blue-100">
+     <div className="p-4 bg-emerald-50 rounded-lg border border-emerald-100">
     <div className="flex items-center justify-between mb-2">
       <span className="font-semibold text-gray-900">{fee.level}</span>
-      <span className="text-lg font-bold text-blue-600">
+      <span className="text-lg font-bold text-emerald-600">
         {new Intl.NumberFormat('fr-MG', { 
           style: 'currency', 
           currency: fee.currency 
