@@ -1,7 +1,7 @@
 import { Institution, InstitutionCategory } from '../types';
 
 // Configuration de l'API
-const API_ROOT_URL = 'https://institut-back.onrender.com/api';
+const API_ROOT_URL = 'https://institut-back.onrender.com/api/v1';
 const API_INSTITUTIONS_URL = `${API_ROOT_URL}/institutions`;
 
 // Types pour les réponses API
