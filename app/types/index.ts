@@ -62,6 +62,7 @@ export interface Institution {
   street_name?: string;
   established?: number;
   capacity?: number;
+  google_maps_url?: string;
   last_renovation?: number;
   accreditation?: string;
   phone_principal?: string;
