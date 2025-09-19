@@ -2,7 +2,14 @@
 
 import React, { useEffect, useRef } from "react";
 import { Institution } from "../types";
-import { Globe, Mail, MapPin, Phone, X, CheckCircle, AlertCircle, Building2 } from "lucide-react";
+import {
+  Globe,
+  Mail,
+  MapPin,
+  Phone,
+  X,
+  Building2,
+} from "lucide-react";
 import ConditionBadge from "./ui/ConditionBadge";
 import StatusCard from "./ui/StatusCard";
 import FeeCard from "./ui/FeeCard";
@@ -21,28 +28,28 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
   const panelRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Focus management pour l'accessibilité
+  // Focus management
   useEffect(() => {
     if (closeButtonRef.current) {
       closeButtonRef.current.focus();
     }
   }, []);
 
-  // Gestion des touches clavier
+  // Escape key handler
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         onClose();
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, [onClose]);
 
   return (
     <aside
-      className="fixed inset-0 z-50 flex items-end justify-center  sm:items-center sm:justify-end bg-black/20 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:justify-end bg-black/20 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="institution-title"
@@ -55,17 +62,17 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
       />
 
       {/* Panel */}
-      <div 
+      <div
         ref={panelRef}
-        className="relative w-full max-w-xl  bg-background shadow-2xl rounded-t-2xl sm:rounded-2xl overflow-hidden border border-gray-100"
+        className="relative max-w-xl max-h-screen m-1 bg-background shadow-2xl rounded-t-2xl sm:rounded-2xl  border border-gray-100"
       >
-        {/* Header avec gradient subtil */}
-        <header className="sticky top-0 z-10 bg-gradient-to-r  border-b border-gray-200 px-6 py-4">
+        {/* Header */}
+        <header className="sticky top-0 z-10 bg-gradient-to-r border-b border-gray-200 px-6 py-4">
           <div className="flex items-start justify-between">
             <div className="flex-1 pr-4">
-              <h2 
+              <h2
                 id="institution-title"
-                className="text-lg font-bold  leading-tight mb-1"
+                className="text-lg font-bold leading-tight mb-1"
               >
                 {institution.label || institution.name}
               </h2>
@@ -81,19 +88,18 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
             <button
               ref={closeButtonRef}
               onClick={onClose}
-              className="shrink-0 p-2 rounded-full hover:bg-emerald-700  cursor-pointer   transition-colors"
+              className="shrink-0 p-2 rounded-full hover:bg-emerald-700 cursor-pointer transition-colors"
               aria-label="Fermer les détails de l'institution"
             >
-              <X size={18} className="" />
+              <X size={18} />
             </button>
           </div>
         </header>
 
-        {/* Content avec scroll optimisé */}
+        {/* Content */}
         <main className="overflow-y-auto h-full pb-25">
-          <div className="p-5 space-y-2">
-            
-            {/* Status et condition - Cards horizontales */}
+          <div className="p-5 space-y-2 overflow-visible">
+            {/* Status & Condition */}
             <section className="flex flex-wrap gap-3">
               <StatusCard status={institution.status} />
               <ConditionBadge condition={institution.building_condition} />
@@ -102,12 +108,16 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
             {/* Description */}
             {institution.description && (
               <InfoCard title="À propos" icon={<Building2 />}>
-                <p className="text-gray-700 leading-relaxed">{institution.description}</p>
+                <p className="text-gray-700 leading-relaxed">
+                  {institution.description}
+                </p>
               </InfoCard>
             )}
 
-            {/* Contact Information */}
-            {(institution.phone_principal || institution.email_principal || institution.website) && (
+            {/* Contact principal */}
+            {(institution.phone_principal ||
+              institution.email_principal ||
+              institution.website) && (
               <InfoCard title="Contact" icon={<Phone />}>
                 <div className="space-y-3">
                   {institution.phone_principal && (
@@ -139,7 +149,25 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
               </InfoCard>
             )}
 
-            {/* Location */}
+            {/* Contacts supplémentaires */}
+            {institution.contacts && institution.contacts.length > 0 && (
+              <InfoCard title="Réseaux & Liens" icon={<Globe />}>
+                <div className="space-y-3">
+                  {institution.contacts.map((contact) => (
+                    <ContactItem
+                      key={contact.id}
+                      icon={<Globe size={18} />}
+                      href={contact.value}
+                      label={contact.value}
+                      description="Lien associé"
+                      external
+                    />
+                  ))}
+                </div>
+              </InfoCard>
+            )}
+
+            {/* Localisation */}
             {institution.google_maps_url && (
               <InfoCard title="Localisation" icon={<MapPin />}>
                 <ContactItem
@@ -152,30 +180,22 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
               </InfoCard>
             )}
 
-            {/* Fees */}
-            {institution.education_fees && institution.education_fees.length > 0 && (
-              <InfoCard title="Frais de scolarité" icon={<Building2 />}>
-                <div className="space-y-3">
-                  {institution.education_fees.map((fee, index) => (
-                    <FeeCard key={index} fee={fee} />
-                  ))}
-                </div>
-              </InfoCard>
-            )}
+            {/* Frais */}
+            {institution.education_fees &&
+              institution.education_fees.length > 0 && (
+                <InfoCard title="Frais de scolarité" icon={<Building2 />}>
+                  <div className="space-y-3">
+                    {institution.education_fees.map((fee, index) => (
+                      <FeeCard key={index} fee={fee} />
+                    ))}
+                  </div>
+                </InfoCard>
+              )}
           </div>
         </main>
       </div>
     </aside>
   );
 };
-
-
-
-
-
-
-
-
-
 
 export default InstitutionDetail;
