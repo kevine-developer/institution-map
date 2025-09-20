@@ -69,6 +69,8 @@ export interface Institution {
   email_principal?: string;
   website?: string;
   status?: string;
+
+
   building_condition?: string;
   lat?: number;
   lng?: number;
@@ -110,6 +112,8 @@ export interface Institution {
     value: number;
     year: number;
   }>;
+  last_update?: string;
+
 }
 
 
