@@ -64,10 +64,10 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
       {/* Panel */}
       <div
         ref={panelRef}
-        className="relative max-w-xl max-h-screen m-1 bg-background shadow-2xl rounded-t-2xl sm:rounded-2xl  border border-gray-100"
+        className="relative w-full max-w-xl h-full max-h-screen m-1 bg-background shadow-2xl rounded-t-2xl sm:rounded-2xl border border-gray-100 flex flex-col"
       >
         {/* Header */}
-        <header className="sticky top-0 z-10 bg-gradient-to-r border-b border-gray-200 px-6 py-4">
+        <header className="flex-shrink-0 bg-gradient-to-r border-b border-gray-200 px-6 py-4">
           <div className="flex items-start justify-between">
             <div className="flex-1 pr-4">
               <h2
@@ -97,8 +97,8 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
         </header>
 
         {/* Content */}
-        <main className="overflow-y-auto h-full pb-25">
-          <div className="p-5 space-y-2 overflow-visible">
+        <main className="flex-1 overflow-y-auto">
+          <div className="p-5 space-y-2">
             {/* Status & Condition */}
             <section className="flex flex-wrap gap-3">
               <StatusCard status={institution.status} />
@@ -107,18 +107,48 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
 
             {/* Description */}
             {institution.description && (
-              <InfoCard title="À propos" icon={<Building2 />}>
+              <InfoCard title="À propos" >
                 <p className="text-gray-700 leading-relaxed">
                   {institution.description}
                 </p>
               </InfoCard>
             )}
 
+            {/* Informations générales */}
+            <InfoCard title="Informations générales">
+              <div className="grid grid-cols-2 gap-4">
+                {institution.established && (
+                  <div>
+                    <dt className="text-sm font-medium text-gray-500">Établi en</dt>
+                    <dd className="text-sm text-gray-900 font-semibold">{institution.established}</dd>
+                  </div>
+                )}
+                {institution.capacity && (
+                  <div>
+                    <dt className="text-sm font-medium text-gray-500">Capacité</dt>
+                    <dd className="text-sm text-gray-900 font-semibold">{institution.capacity} personnes</dd>
+                  </div>
+                )}
+                {institution.last_renovation && (
+                  <div>
+                    <dt className="text-sm font-medium text-gray-500">Dernière rénovation</dt>
+                    <dd className="text-sm text-gray-900 font-semibold">{institution.last_renovation}</dd>
+                  </div>
+                )}
+                {institution.accreditation && (
+                  <div>
+                    <dt className="text-sm font-medium text-gray-500">Accréditation</dt>
+                    <dd className="text-sm text-gray-900 font-semibold">{institution.accreditation}</dd>
+                  </div>
+                )}
+              </div>
+            </InfoCard>
+
             {/* Contact principal */}
             {(institution.phone_principal ||
               institution.email_principal ||
               institution.website) && (
-              <InfoCard title="Contact" icon={<Phone />}>
+              <InfoCard title="Contact">
                 <div className="space-y-3">
                   {institution.phone_principal && (
                     <ContactItem
@@ -151,15 +181,15 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
 
             {/* Contacts supplémentaires */}
             {institution.contacts && institution.contacts.length > 0 && (
-              <InfoCard title="Réseaux & Liens" icon={<Globe />}>
-                <div className="space-y-3">
+              <InfoCard title="Réseaux & Liens" >
+                <div className="space-y-1">
                   {institution.contacts.map((contact) => (
                     <ContactItem
                       key={contact.id}
                       icon={<Globe size={18} />}
                       href={contact.value}
                       label={contact.value}
-                      description="Lien associé"
+                      description=""
                       external
                     />
                   ))}
@@ -167,23 +197,59 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
               </InfoCard>
             )}
 
-            {/* Localisation */}
-            {institution.google_maps_url && (
-              <InfoCard title="Localisation" icon={<MapPin />}>
-                <ContactItem
-                  icon={<MapPin size={18} />}
-                  href={institution.google_maps_url}
-                  label="Voir sur Google Maps"
-                  description="Ouvrir dans Google Maps"
-                  external
-                />
+            {/* Services */}
+            {institution.services && institution.services.length > 0 && (
+              <InfoCard title="Services proposés">
+                <div className="space-y-2">
+                  {institution.services.map((service, index) => (
+                    <div key={index} className="flex items-center p-3 bg-blue-50 rounded-lg">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full mr-3 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-medium text-gray-900">{service.name }</h4>
+                        {service.description && (
+                          <p className="text-sm text-gray-600 mt-1">{service.description}</p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </InfoCard>
             )}
+
+            {/* Localisation */}
+            <InfoCard title="Localisation">
+              <div className="space-y-3">
+                
+                {/* Lien Google Maps */}
+                {institution.google_maps_url && (
+                  <ContactItem
+                    icon={<MapPin size={18} />}
+                    href={institution.google_maps_url}
+                    label="Voir sur Google Maps"
+                    description="Ouvrir dans Google Maps"
+                    external
+                  />
+                )}
+
+                {/* Informations administratives */}
+                {(institution.region_name || institution.district_name || institution.commune_name) && (
+                  <div className="pt-2 border-t border-gray-200">
+                    <h4 className="text-sm font-medium text-gray-900 mb-2">Division administrative</h4>
+                    <div className="space-y-1 text-sm text-gray-600">
+                      {institution.region_name && <div>Région: {institution.region_name}</div>}
+                      {institution.district_name && <div>District: {institution.district_name}</div>}
+                      {institution.commune_name && <div>Commune: {institution.commune_name}</div>}
+                      {institution.street_name && <div>Rue: {institution.street_name}</div>}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </InfoCard>
 
             {/* Frais */}
             {institution.education_fees &&
               institution.education_fees.length > 0 && (
-                <InfoCard title="Frais de scolarité" icon={<Building2 />}>
+                <InfoCard title="Frais de scolarité" >
                   <div className="space-y-3">
                     {institution.education_fees.map((fee, index) => (
                       <FeeCard key={index} fee={fee} />
@@ -191,6 +257,24 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
                   </div>
                 </InfoCard>
               )}
+
+            {/* Historique des mises à jour */}
+            {institution.last_update && (
+              <InfoCard title="Dernière mise à jour">
+                <div className="text-sm text-gray-600">
+                  {new Date(institution.last_update).toLocaleDateString('fr-FR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  })}
+                </div>
+              </InfoCard>
+            )}
+
+            {/* Padding bottom pour éviter que le contenu soit coupé */}
+            <div className="h-6"></div>
           </div>
         </main>
       </div>
