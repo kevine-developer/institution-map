@@ -15,6 +15,7 @@ import StatusCard from "./ui/StatusCard";
 import FeeCard from "./ui/FeeCard";
 import ContactItem from "./ui/ContactItem";
 import InfoCard from "./ui/InfoCard";
+import { getContactIcon, getContactLabel } from "./ui/ContactIcons";
 
 interface InstitutionDetailProps {
   institution: Institution;
@@ -182,17 +183,41 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
             {/* Contacts supplémentaires */}
             {institution.contacts && institution.contacts.length > 0 && (
               <InfoCard title="Réseaux & Liens" >
-                <div className="space-y-1">
-                  {institution.contacts.map((contact) => (
-                    <ContactItem
-                      key={contact.id}
-                      icon={<Globe size={18} />}
-                      href={contact.value}
-                      label={contact.value}
-                      description=""
-                      external
-                    />
-                  ))}
+                <div className="space-y-2">
+                  {institution.contacts.map((contact) => {
+                    const { icon, color, bgColor, label } = getContactIcon(contact.value);
+                    const displayLabel = getContactLabel(contact.value);
+                    
+                    return (
+                      <div key={contact.id} className="group">
+                        <a
+                          href={contact.value}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all duration-200 border border-transparent hover:border-gray-200"
+                        >
+                          <div className={`flex-shrink-0 w-10 h-10 rounded-lg ${bgColor} flex items-center justify-center group-hover:scale-105 transition-transform duration-200`}>
+                            <div className={color}>
+                              {icon}
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-medium text-gray-900 group-hover:text-gray-700 transition-colors">
+                              {label}
+                            </div>
+                            <div className="text-sm text-gray-500 truncate group-hover:text-gray-600">
+                              {displayLabel}
+                            </div>
+                          </div>
+                          <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    );
+                  })}
                 </div>
               </InfoCard>
             )}
@@ -219,7 +244,7 @@ const InstitutionDetail: React.FC<InstitutionDetailProps> = ({
             {/* Localisation */}
             <InfoCard title="Localisation">
               <div className="space-y-3">
-                
+           
                 {/* Lien Google Maps */}
                 {institution.google_maps_url && (
                   <ContactItem
